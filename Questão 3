@@ -13,4 +13,24 @@ No algoritmo, descreva como será:
 
 Resposta:
 
-Na proposta de variáveis, para a realização desta inscrição
+Algoritmo "Inscrição"
+
+Var
+   nome, cpf, endereço: caracter
+   altura: real                     //Declaração de Variáveis
+   rg: inteiro
+
+
+Inicio
+      Escreva("- Nome: ")
+                      leia(nome) //Comando de atrubuição
+      Escreva("- CPF: ")
+                      leia(cpf) //Comando de atrubuição
+      Escreva("- RG: ")
+                      leia(rg) //Comando de atrubuição
+      Escreva("- Altura: ")
+                      leia(altura) //Comando de atrubuição
+      Escreva("- Endereço: ")
+                      leia(endereço) //Comando de atrubuição
+
+Fimalgoritmo
