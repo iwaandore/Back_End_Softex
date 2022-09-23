@@ -27,3 +27,109 @@ Tem pedal? Sim.
 Então, o transporte escolhido foi a bicicleta.
 
 Para chegar ao resultado de cada uma das opções, use o modelo ilustrado na imagem em anexo. 
+
+resposta:
+
+programa
+{
+	
+logico verifica
+	funcao inicio()
+	{
+		escreva("É terrestre?")
+		leia(verifica)
+
+			se(verifica==verdadeiro){
+				escreva("cabe apenas uma pessoa?")
+				leia(verifica)
+			
+			se(verifica==verdadeiro){
+				escreva("É pesado?")
+				leia(verifica)
+
+			se(verifica==verdadeiro){
+				escreva("Então é trator")
+			}
+
+			se(verifica==falso){
+				escreva("Tem pedal?")
+				leia(verifica)
+
+				se(verifica==verdadeiro){
+					escreva("Bicicleta")	
+				}
+					
+			}
+			
+				}
+			}
+			se(verifica==falso){
+				escreva("Usa capacete?")
+				leia(verifica)
+
+					se(verifica==verdadeiro){
+						escreva("Moto")
+
+							
+							}
+							
+							se(verifica==falso){
+								escreva("Tem passageiro?")
+								leia(verifica)
+								
+								se(verifica==verdadeiro){
+									escreva("Usa trilho?")
+									leia(verifica)
+									}
+
+									se(verifica==verdadeiro){
+										escreva("Trem")
+										
+									}senao{
+										escreva("Anda na pista?")
+										leia(verifica)
+											se(verifica==verdadeiro){
+												escreva("É alto?")
+												leia(verifica)
+											}
+												se(verifica==verdadeiro){
+													escreva("Usa carroceria?")
+													leia(verifica)
+												}
+													se(verifica==verdadeiro){
+														escreva("Caminhão")	
+													
+													}
+														se(verifica==falso){
+															escreva("Pode ter cobrador?")
+															leia(verifica)
+														}
+															se(verifica==verdadeiro){
+																escreva("Ônibus")	
+															}
+												
+												se(verifica==falso)
+														
+															
+												
+									}
+										
+					}
+				}
+			
+			
+			se(verifica==falso){
+				escreva("É aéreo?")
+				leia(verifica)
+				}
+			se(verifica==falso){
+				escreva("É aquático?")
+				leia(verifica)
+				
+				}
+			
+			
+			
+			}
+	
+}
