@@ -43,26 +43,26 @@ logico verifica
 				escreva("cabe apenas uma pessoa?")
 				leia(verifica)
 			
-			se(verifica==verdadeiro){
-				escreva("É pesado?")
-				leia(verifica)
-
-			se(verifica==verdadeiro){
-				escreva("Então é trator")
-			}
-
-			se(verifica==falso){
-				escreva("Tem pedal?")
-				leia(verifica)
-
 				se(verifica==verdadeiro){
-					escreva("Bicicleta")	
-				}
+					escreva("É pesado?")
+					leia(verifica)
+
+					se(verifica==verdadeiro){
+						escreva("Então é trator")
+					}
+
+						se(verifica==falso){
+							escreva("Tem pedal?")
+							leia(verifica)
+
+							se(verifica==verdadeiro){
+								escreva("Bicicleta")	
+							}
 					
-			}
+						}
 			
 				}
-			}
+			
 			se(verifica==falso){
 				escreva("Usa capacete?")
 				leia(verifica)
@@ -95,33 +95,83 @@ logico verifica
 												se(verifica==verdadeiro){
 													escreva("Usa carroceria?")
 													leia(verifica)
-												}
+
 													se(verifica==verdadeiro){
 														escreva("Caminhão")	
 													
 													}
+												}		
+														se(verifica==falso){
+															escreva("É veículo leve?")
+															leia(verifica)
+																se(verifica==verdadeiro)
+																	escreva("carro")
+														}
+														
 														se(verifica==falso){
 															escreva("Pode ter cobrador?")
 															leia(verifica)
+
+																se(verifica==verdadeiro){
+																	escreva("Ônibus")	
+																}
 														}
-															se(verifica==verdadeiro){
-																escreva("Ônibus")	
-															}
-												
-												se(verifica==falso)
+														
+														
+													
 														
 															
 												
-									}
+												
+														
+															
+												
+										}
 										
-					}
+							}
 				}
+			}
+			
 			
 			
 			se(verifica==falso){
 				escreva("É aéreo?")
 				leia(verifica)
+
+				se(verifica==verdadeiro){
+					escreva("Precisa pular?")
+					leia(verifica)
+						se(verifica==verdadeiro){
+							escreva("Asa delta")
+						}
 				}
+							se(verifica==falso){
+								escreva("Viaja dentro?")
+								leia(verifica)
+									se(verifica==verdadeiro)
+										escreva("É devagar?")
+										leia(verifica)
+											se(verifica==verdadeiro){
+												escreva("Balão")
+											}
+							}
+												se(verifica==falso){
+													escreva("Tem piloto?")
+													leia(verifica)
+														se(verifica==verdadeiro)
+															escreva("Possui asas fixas?")
+															leia(verifica)
+																se(verifica==verdadeiro)
+																	escreva("Avião")
+												}
+																	se(verifica==falso){
+																		escreva("Faz voo vertical?")
+																		leia(verifica)
+																			se(verifica==verdadeiro)
+																				escreva("Helicóptero")
+																	}
+				
+			}
 			se(verifica==falso){
 				escreva("É aquático?")
 				leia(verifica)
