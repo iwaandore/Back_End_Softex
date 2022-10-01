@@ -1,0 +1,39 @@
+Faça uma função calculadora de dois números com três parâmetros: os dois primeiros serão os números da operação e o terceiro será a entrada que definirá a operação a ser executada. Considera a seguinte definição:
+1. Soma
+2. Subtração
+3. Multiplicação
+4. Divisão
+
+Caso seja inserido um número de operação que não exista, o resultado deverá ser 0.
+
+Resposta:
+
+n1 = float(input('Número 1: '))
+n2 = float(input('Número 2: '))
+resultado = float
+
+print('1. Soma')
+print('2. Subtração')
+print('3. Multiplicação')
+print('4. Divisão')
+
+sinal = int(input('Insira a operação: '))
+
+if sinal == 1:
+    resultado = (n1 + n2)
+    print(resultado)
+
+elif sinal == 2:
+    resultado = (n1 - n2)
+    print(resultado)
+
+elif sinal == 3:
+    resultado = (n1 * n2)
+    print(resultado)
+
+elif sinal == 4:
+    resultado = (n1 / n2)
+    print(resultado)
+
+else:
+    print('0')
