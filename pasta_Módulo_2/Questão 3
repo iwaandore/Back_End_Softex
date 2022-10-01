@@ -13,6 +13,6 @@ print('Iniciando contagem regressiva')
 
 while contador <= 4:
     contador = contador + 1
-    print(contador)
+    print(contador, "s")
     time.sleep(4.0)
 print('BUMMM!')
