@@ -20,6 +20,5 @@ if media >= 7 and falta < 3:
     print('O aluno {} foi aprovado com a media: {}'.format(nome, media))
     print('Quantidade de faltas:{}'.format(falta))
 else:
-    media < 7 and falta > 3
     print('O aluno {} foi reprovado :('.format(nome))
     print('Quantidade de faltas:{}'.format(falta))
