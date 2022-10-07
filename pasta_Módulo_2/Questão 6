@@ -1,0 +1,21 @@
+Desenvolva um programa que recebe o nome do usuário completo e ano de nascimento que seja entre 1922 e 2021. A partir dessas informações, o sistema exibirá o nome do usuário e a idade concluída, ou completará, no ano atual (2022).
+
+Não faça um usuário inválido o campo preenchido. o que não seja um número de configuração que seja um sistema que um valor não preenchido.
+
+Resposta:
+
+verdade ="false"
+while(verdade!="true"):
+
+    try:
+        nome = str(input('Digite o seu nome: '))
+        ano_nas =int(input('Digite o seu ano de nascimento: '))
+
+
+        if ano_nas >= 1922 and ano_nas <= 2021:
+            idade = 2022 - ano_nas
+            break
+    
+    except:
+        print('Insira uma data válida')
+print("{} completará ou completou {} anos".format(nome, idade))
