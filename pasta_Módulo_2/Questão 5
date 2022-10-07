@@ -13,22 +13,24 @@ Após a seleção, o sistema deve pedir para o usuário inserir o primeiro e seg
 
 Resposta:
 
+#Função da Lista de Operações
 def lis(list):
     print("\nOperações: \n\n1.Soma \n2.Subtração \n3.Multiplicação \n4.Divisão \n0.Sair")
 
-
+#Função Adição
 def adicao(valor_1, valor_2):
     return valor_1 + valor_2
 
-
+#Função Subtração
 def subtracao(valor_1, valor_2):
     return valor_1 - valor_2
 
-
+#Função Multiplicação
 def multiplicacao(valor_1, valor_2):
     return valor_1 * valor_2
 
 
+#Função Divisão
 def divisao(valor_1, valor_2):
     return valor_1 / valor_2
 
@@ -46,21 +48,19 @@ while escolha != 0:
         while escolha == 1:
             valor_1 = float(input('Digite o primeiro número: '))
             valor_2 = float(input('Digite o segundo número: '))
-
             print(adicao(valor_1, valor_2))
-            escolha = int(
-                input('Deseja sair da operação? Se sim, digite 0, caso contrário digite 1: '))
+            escolha = int(input('Deseja sair da operação? Se sim, digite 0, caso contrário digite 1: '))
             if escolha == 1:
                 valor_1 = float(input('Digite o primeiro número: '))
                 valor_2 = float(input('Digite o segundo número: '))
                 print(adicao(valor_1, valor_2))
             if escolha == 0:
-                print('O resultado da soma foi:', adicao(valor_1, valor_2))
+                print('O resultado da soma foi: ',adicao(valor_1, valor_2))
                 escolha = str(input('Deseja mudar de  operação? s/n: '))
             if escolha == "n":
-                print('O resultado da sua soma foi: ', adicao(valor_1, valor_2), '\nFim da operação')
+                print('Fim da operação\nO resultado da soma foi: ',adicao(valor_1, valor_2))
                 break
-            if escolha != 0 and escolha != 1:
+            if escolha != 0 and escolha != 1 and escolha != "n" and escolha != "s":
                 print('Essa opção não existe')
                 lis(list)
                 escolha = int(input('Escolha a operação: '))
@@ -68,7 +68,7 @@ while escolha != 0:
                 lis(list)
                 escolha = int(input('Escolha a operação: '))
 
-    if escolha == 2:
+    elif escolha == 2:
 
         while escolha == 2:
             valor_1 = float(input('Digite o primeiro número: '))
@@ -81,12 +81,12 @@ while escolha != 0:
                 valor_2 = float(input('Digite o segundo número: '))
                 print(subtracao(valor_1, valor_2))
             if escolha == 0:
-                print('O resultado da subtração foi:', subtracao(valor_1, valor_2))
+                print('O resultado da subtração foi:',subtracao(valor_1, valor_2))
                 escolha = str(input('Deseja mudar de  operação? s/n: '))
             if escolha == "n":
-                print('Fim da operação')
+                print('Fim da operação\nO resultado da subtração foi: ', subtracao(valor_1, valor_2))
                 break
-            if escolha != 0 and escolha != 2:
+            if escolha != 0 and escolha != 2 and escolha != "n" and escolha != "s":
                 print('Essa opção não existe')
                 lis(list)
                 escolha = int(input('Escolha a operação: '))
@@ -94,25 +94,26 @@ while escolha != 0:
                 lis(list)
                 escolha = int(input('Escolha a operação: '))
 
-    if escolha == 3:
+    elif escolha == 3:
 
         while escolha == 3:
             valor_1 = float(input('Digite o primeiro número: '))
             valor_2 = float(input('Digite o segundo número: '))
 
             print(multiplicacao(valor_1, valor_2))
-            escolha = int(input('Deseja sair da operação? Se sim, digite 0, caso contrário digite 3: '))
+            escolha = int(
+                input('Deseja sair da operação? Se sim, digite 0, caso contrário digite 3: '))
             if escolha == 2:
                 valor_1 = float(input('Digite o primeiro número: '))
                 valor_2 = float(input('Digite o segundo número: '))
                 print(multiplicacao(valor_1, valor_2))
             if escolha == 0:
-                print('O resultado da multiplicação foi:', multiplicacao(valor_1, valor_2))
-                escolha = str(input('Deseja mudar de  operação? s/n: '))
+                print('O resultado da multiplicação foi:',multiplicacao(valor_1, valor_2))
+                escolha = str(input('Deseja mudar de operação? s/n: '))
             if escolha == "n":
-                print('Fim da operação')
+                print('Fim da operação\nO resultado da multiplicação foi: ', multiplicacao(valor_1, valor_2))
                 break
-            if escolha != 0 and escolha != 3:
+            if escolha != 0 and escolha != 3 and escolha != "n" and escolha != "s":
                 print('Essa opção não existe')
                 lis(list)
                 escolha = int(input('Escolha a operação: '))
@@ -120,12 +121,11 @@ while escolha != 0:
                 lis(list)
                 escolha = int(input('Escolha a operação: '))
 
-    if escolha == 4:
+    elif escolha == 4:
 
         while escolha == 4:
             valor_1 = float(input('Digite o primeiro número: '))
             valor_2 = float(input('Digite o segundo número: '))
-
             print(divisao(valor_1, valor_2))
             escolha = int(input('Deseja sair da operação? Se sim, digite 0, caso contrário digite 4: '))
             if escolha == 4:
@@ -134,16 +134,23 @@ while escolha != 0:
                 print(divisao(valor_1, valor_2))
             if escolha == 0:
                 print('O resultado da divisão foi:', divisao(valor_1, valor_2))
-                escolha = str(input('Deseja mudar de  operação? s/n: '))
+                escolha = str(input('Deseja mudar de operação? s/n: '))
             if escolha == "n":
-                print('Fim da operação')
+                print('Fim da operação\nO resultado da divisão foi:', divisao(valor_1, valor_2))
                 break
-            if escolha != 0 and escolha != 4:
+            if escolha != 0 and escolha != 4 and escolha != "n" and escolha != "s":
                 print('Essa opção não existe')
                 lis(list)
                 escolha = int(input('Escolha a operação: '))
             if escolha == "s":
                 lis(list)
                 escolha = int(input('Escolha a operação: '))
-    else:
-        print("Fim da equação")
+                if escolha == 0:
+                    print('Fim da operação')
+                    break
+
+    elif escolha == 0:
+        print('Fim da operação')
+        break
+
+
