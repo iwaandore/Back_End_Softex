@@ -1,0 +1,118 @@
+Desenvolva um código que simule uma eleição com três candidatos.
+- candidato_X => 889
+- candidato_Y => 847
+- candidato_Z => 515
+- branco => 0
+
+O código deve perguntar se deseja finalizar a votação depois do voto. Caso o número do voto não corresponda a nenhum candidato ou seja branco, ele deve ser tratado como nulo. Se for inserido um texto ao invés de número, o código deve retornar uma mensagem para votar novamente.
+
+Quando a votação for finalizada, o código deverá mostrar o vencedor, aquele com o maior número de votos e, também, a quantidade de votos de cada candidato, os brancos e nulos 
+
+Resposta:
+
+from enum import Enum
+
+# Função que irá pegar o maior número
+def maior(qtd_voto_x, qtd_voto_y, qtd_voto_z, qtd_branco, qtd_nulo):
+    max = 0
+
+    if qtd_voto_x > max:
+        max = qtd_voto_x
+        print('Candidato X')
+    if qtd_voto_y > max:
+        max = qtd_voto_y
+        print('Candidato Y')
+    if qtd_voto_z > max:
+        max = qtd_voto_z
+        print('Candidato Z')
+    if qtd_branco > max:
+        max = qtd_branco
+        print('Branco')
+    if qtd_nulo > max:
+        max = qtd_nulo
+        print('Nulo')
+    return max
+
+# Classe de Candidatos
+class Voto(Enum):
+    candidato_x = 889
+    candidato_y = 847
+    candidato_z = 515
+    branco = 0
+
+print('- candidato_X => 889')
+print('- candidato_Y => 847')
+print('- candidato_Z => 515')
+print('- branco => 0')
+
+qtd_voto_x = 0
+qtd_voto_y = 0
+qtd_voto_z = 0
+qtd_branco = 0
+qtd_nulo = 0
+
+resposta = 'n'
+while resposta != 's':
+    try:
+        Voto_usuario = int(input('Digite o número do seu candidato: '))
+        if Voto_usuario == 889:
+            qtd_voto_x = qtd_voto_x + 1
+            print('------CANDIDATO------')
+            print(Voto.candidato_x.name)
+            print('------NÚMERO DO CANDIDATO------')
+            print(Voto.candidato_x.value)
+            resposta = str(input('Deseja finalizar a votação? s/n: '))
+            if resposta == 's':
+                print('Fim da votação')
+                break
+
+        elif Voto_usuario == 847:
+            qtd_voto_y = qtd_voto_y + 1
+            print('------CANDIDATO------')
+            print(Voto.candidato_y.name)
+            print('------NÚMERO DO CANDIDATO------')
+            print(Voto.candidato_y.value)
+            resposta = str(input('Deseja finalizar a votação? s/n: '))
+            if resposta == 's':
+                print('Fim da votação')
+                break
+
+        elif Voto_usuario == 515:
+            qtd_voto_z = qtd_voto_z + 1
+            print('------CANDIDATO------')
+            print(Voto.candidato_z.name)
+            print('------NÚMERO DO CANDIDATO------')
+            print(Voto.candidato_z.value)
+            resposta = str(input('Deseja finalizar a votação? s/n: '))
+            if resposta == 's':
+                print('Fim da votação')
+                break
+
+        elif Voto_usuario == 0:
+            qtd_branco = qtd_branco + 1
+            print('------CANDIDATO------')
+            print(Voto.branco.name)
+            print('------NÚMERO DO CANDIDATO------')
+            print(Voto.branco.value)
+            resposta = str(input('Deseja finalizar a votação? s/n: '))
+            if resposta == 's':
+                print('Fim da votação')
+                break
+        else:
+            qtd_nulo = qtd_nulo + 1
+            print('Voto anulado')
+            resposta = str(input('Deseja finalizar a votação? s/n: '))
+            if resposta == 's':
+                print('Fim da votação')
+                break
+    except:
+        print('Digite um número')
+
+print('------O vencedor foi------')                 
+print(maior(qtd_voto_x, qtd_voto_y, qtd_voto_z, qtd_branco, qtd_nulo))      # Pegando o Maior número e nome do Candidato
+print('------Total de Votações------')
+print('Candidato X:', qtd_voto_x)
+print('Candidato Y:', qtd_voto_y)           # Total de Votos
+print('Candidato Z:', qtd_voto_z)
+print('Branco:', qtd_branco)
+print('Nulo:', qtd_nulo)
