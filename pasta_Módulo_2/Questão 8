@@ -1,0 +1,29 @@
+Construa um algoritmo de ordenação, utilizando o método bubble sort estudado. (Lembre-se que se trata de uma série de instruções que devem ser seguidas passo a passo).
+Para isso, você deve criar um método em que o tamanho do vetor seja dez e deve estar em ordem crescente.
+
+O vetor deverá:
+- comparar seus elementos dois a dois adjacentes;
+- se os elementos não estiverem em ordem, então ordenar;
+- senão, avançar para o próximo par;
+- repetir a operação até que nenhuma troca possa ser feita no vetor inteiro.
+
+Resposta:
+
+import random
+
+
+def Bubble_Sort(lista):
+    for j in range(len(lista)-1, 0, -1):
+        for i in range(j):
+            if lista[i] > lista[i+1]:
+                resultado = lista[i]
+                lista[i] = lista[i+1]
+                lista[i+1] = resultado
+
+
+lista = []
+for i in range(0, 8, 1):
+    lista.append(random.randint(1, 20))
+print(lista)
+Bubble_Sort(lista)
+print(lista)
