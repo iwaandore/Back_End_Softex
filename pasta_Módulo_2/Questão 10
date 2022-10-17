@@ -1,0 +1,37 @@
+Faça um algoritmo de ordenação utilizando o método insertion sort.
+Crie um método que execute as seguintes operações:
+
+- Tamanho do vetor: 30;
+- Utilize números ímpares;
+- Opere em ordem crescente.
+
+Resposta:
+
+import random
+
+def separar_impares(array):
+    lista_impares = list([])
+    for p in range(len(array)):
+        if((array[p]%2) == 1):
+            lista_impares.append(array[p])
+    return lista_impares
+
+def sort (array):
+    for p in range(0, len(array)):
+        current_element = array[p]
+
+        while p > 0 and array[p - 1] > current_element :
+            array[p] = array[p - 1]
+            p-=1
+        
+        array [p] = current_element
+
+array = []
+for p in range(0, 30, 1):
+    array.append(random.randint(1, 1000))
+
+sort(array)
+lista_impares = separar_impares(array)
+
+print("\nLista a ser ordenada:\n",array)
+print("\nLista impar:\n",lista_impares)
