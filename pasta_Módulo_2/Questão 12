@@ -1,0 +1,67 @@
+Crie um tipo abstrato de dado (TAD) para manipular números complexos na linguagem Python.
+O método deve:
+
+- calcular três números complexos;
+- realizar todas as operações básicas;
+- e imprimir as propriedades real e img do números. 
+
+Resposta:
+
+def calculadora_soma():
+    n1 = complex((input("N1: ")))
+    n2 = complex((input("N2: ")))
+    n3 = complex((input("N3: ")))
+    resultado = n1 + n2 + n3
+    print("Resultado:", resultado)
+    print("Resultado real:", resultado.real)
+    print("Resultado imaginário:", resultado.imag)
+    print(type(resultado))
+
+
+def calculadora_subtracao():
+    n1 = complex((input("N1: ")))
+    n2 = complex((input("N2: ")))
+    n3 = complex((input("N3: ")))
+    resultado = n1 - n2 - n3
+    print("Resultado:", resultado)
+    print("Resultado real:", resultado.real)
+    print("Resultado imaginário:", resultado.imag)
+    print(type(resultado))
+
+
+def calculadora_multiplicacao():
+    n1 = complex((input("N1: ")))
+    n2 = complex((input("N2: ")))
+    n3 = complex((input("N3: ")))
+    resultado = n1 * n2 * n3
+    print("Resultado:", resultado)
+    print("Resultado real:", resultado.real)
+    print("Resultado imaginário:", resultado.imag)
+    print(type(resultado))
+
+
+def calculadora_divisao():
+    n1 = complex((input("N1: ")))
+    n2 = complex((input("N2: ")))
+    n3 = complex((input("N3: ")))
+    resultado = n1 / n2 / n3
+    print("Resultado:", resultado)
+    print("Resultado real:", resultado.real)
+    print("Resultado imaginário:", resultado.imag)
+    print(type(resultado))
+
+
+print("1.Soma\n2.Subtração\n3.Divisão\n4.Multiplicação")
+op = int((input("Qual operação deseja fazer? ")))
+
+if op == 1:
+    calculadora_soma()
+
+elif op == 2:
+    calculadora_subtracao()
+
+elif op == 3:
+    calculadora_divisao()
+
+elif op == 4:
+    calculadora_multiplicacao()
