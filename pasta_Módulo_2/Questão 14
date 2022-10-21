@@ -1,0 +1,59 @@
+Classifique dois objetos materiais e dois abstratos. Insira, no mínimo, três métodos e três atributos para cada.
+
+Resposta:
+
+class teclado:
+
+    atributos:
+        marca: Caracter;
+        cor: Caracter;
+        concectado: Lógico;
+
+    métodos:
+        digitar_letras()
+        digitar_números()
+        atalhos_de_comando()
+
+class controle:
+
+    atributos:
+        marca: Caracter;
+        cor: Caracter;
+        botões: Caracter;
+
+    métodos:
+        desligar()
+        ligar()
+        aumentar_volume()
+        diminuir_volume()
+        mudar_de_canal()
+
+--------------------------------------------
+
+class estudar:
+
+    atributos:
+        livro: Caracter;
+        páginas: Inteiro;
+        sumário: Real;
+        assunto: Caracter;
+        disciplina: Caracter;
+
+    métodos:
+        escrever()
+        ler()
+        praticar()
+
+class chat:
+
+    atributos:
+        mensagens: Caracter;
+        descrição_usuário: Caracter;
+        lista_de_amigos: Caracter;
+        botão_câmera: Lógico;
+        botão_gravar_voz: Lógico;
+
+    métodos:
+        enviar_mensagens()
+        enviar_fotos()
+        enviar_áudios()
