@@ -1,0 +1,47 @@
+Crie dois pacotes baseados nas atribuições de uma empresa e inclua classes neles. Lembre-se de trabalhar com os padrões Java.
+
+Resposta:
+
+package bradesco.banco;
+
+public class conta{
+    public String usuario;
+    private int login;
+    private int senha;
+    public int transacao;
+
+    public String set_usuario(String inserir_usuario){
+        this.usuario = inserir_usuario;
+    }
+    public String get_usuario(){
+        return usuario;
+    }
+    private int set_login(int fazer_login, int senha){
+        this.login = fazer_login;
+        this.senha = senha;
+    }
+
+}
+
+---------------------------------------------------------
+
+package transacao.banco;
+
+public class conta{
+    public String usuario;
+    public int transacao;
+
+    public String set_usuario(String inserir_usuario){
+        this.usuario = inserir_usuario;
+    }
+    public String get_usuario(){
+        return usuario;
+    }
+    public int set_transacao(int fazer_transacao){
+        this.transacao = fazer_transacao;
+    }
+
+}
+
+
+    
