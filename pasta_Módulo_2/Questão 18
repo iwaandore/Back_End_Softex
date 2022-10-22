@@ -19,6 +19,7 @@ public class conta{
     private int set_login(int fazer_login, int senha){
         this.login = fazer_login;
         this.senha = senha;
+        
     }
 
 }
@@ -27,7 +28,7 @@ public class conta{
 
 package transacao.banco;
 
-public class conta{
+public class pix{
     public String usuario;
     public int transacao;
 
@@ -42,6 +43,3 @@ public class conta{
     }
 
 }
-
-
-    
