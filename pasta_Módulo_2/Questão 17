@@ -1,0 +1,47 @@
+Crie uma classe e insira nela, no mínimo, dois atributos, os quais devem ter um método acessor (get) e um método modificador (set) para cada. Defina um objeto para cada atributo e elabore um construtor para criar alguma regra.
+
+A atividade pode ser realizada em qualquer linguagem de programação ou apenas utilizando algoritmos.
+
+Resposta:
+
+class biblioteca:
+
+    def __init__(self, livro, estante):
+        self.estante = estante
+        self.livro = livro
+
+    def set_estante(self, ad_estante):
+        self.estante += ad_estante
+
+    def set_livro(self, ad_livro):
+        self.livro += ad_livro
+
+    def imprimir(self):
+        print(self.livro, self.estante)
+
+    def get_livro(self):
+        return self.livro
+
+    def get_estante(self):
+        return self.estante
+
+
+b1 = biblioteca(0, 0.0)
+
+v1 = 4
+while (v1 != 0):
+
+    v1 = float(input("Deseja adicionar mais um livro?\n[0]Não\n[1]Sim\n"))
+    if v1 == 1:
+        b1.set_livro(float(input("Quantos livros deseja adicionar na sua estante? ")))
+        print("Quantidade de livros:", b1.get_livro())
+        if b1.get_livro() > 10:
+            b1.set_estante(b1.get_livro()/10)
+            print("Quantidade de estantes:", b1.get_estante())
+
+    elif (v1 == 0):
+        print("Sua quantidade de livros é:", b1.get_livro(), "\nSua quantidade de estantes é:", b1.get_estante())
+        break
+
+    else:
+        print("Digite 1/0")
