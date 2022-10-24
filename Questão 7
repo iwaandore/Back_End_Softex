@@ -1,0 +1,90 @@
+Após uma prova de vestibular, uma escola quer identificar quantos dos seus alunos foram aprovados em cada turma de formandos. Ela quer saber qual aluno teve a maior nota e de qual turma ele é. Nessa escola, há quatro turmas (A, B, C e D) com vinte e cinco alunos cada.
+
+Elabore um algoritmo que solicite o nome e a nota do vestibular aos alunos. Depois, informe quantos deles foram aprovados, de que turma são, qual a maior nota em cada turma e qual aluno teve a maior nota de todas.
+
+Para que o aluno seja aprovado no vestibular, ele deverá obter nota maior ou igual a 7.
+
+Resposta:
+
+Algoritmo
+
+Var
+   // Seção de Declarações das variáveis
+
+   contador, qtd_aprovados: inteiro
+   Aluno, MA: caractere
+   Nota, Melhor_Nota: Real
+   resposta: caractere
+   turmaA, turmaB, turmaC, turmaD: caractere
+
+
+
+
+Inicio
+   Escreval("-------------------------------------------")
+   Escreval("--------------Escola Progresso-------------")
+   Escreval("-------------------------------------------")
+   Escreval("")
+   Escreval("-----Sistema de notas - Vestibular---------")
+   Escreval("")
+   Escreval("")
+
+   Repita
+      Escreval("------------Digite a turma:-------------")
+      Leia (resposta)
+      Se (resposta = "A") entao
+         Escreval ("Vamos cadastrar os alunos da turma A")
+      Senao
+         Se (resposta = "B") entao
+            Escreval ("Vamos cadastrar os alunos da turma B")
+         Senao
+            Se (resposta = "C") entao
+               Escreval ("Vamos cadastrar os alunos da turma C")
+            Senao
+               Se (resposta = "D") entao
+                  Escreval ("Vamos cadastrar os alunos da turma D")
+               Fimse
+            Fimse
+         Fimse
+      Fimse
+
+
+
+      contador <- 1
+      Melhor_Nota <- 0
+      qtd_aprovados <- 0
+
+      Para contador de 1 ate 3 faca
+
+         Escreval("Aluno", contador)
+         Escreval("Nome do(a) aluno(a): ")
+         Leia (Aluno)
+         Escreval("Nota de " , Aluno , ": ")
+         Leia (Nota)
+
+         Se (Nota > Melhor_nota) entao
+            Melhor_nota <- Nota
+            Ma <- Aluno
+         Fimse
+
+         Se(Nota >= 7) entao
+            Escreval ("Aluno foi aprovado")
+            qtd_aprovados <- qtd_aprovados + 1
+         Senao
+            Escreval ("Aluno foi reprovado")
+
+         Fimse
+
+      Fimpara
+
+      Escreval("Você quer cadastrar outra turma? [S/N]")
+      Leia(resposta)
+   Ate (resposta = "N")
+
+
+   Escreval("A quantidade de aprovados foi", qtd_aprovados)
+
+   Escreval("O maior aproveitamento foi do(a) aluno(a) ",MA, " com nota", Melhor_Nota)
+
+
+Fimalgoritmo
