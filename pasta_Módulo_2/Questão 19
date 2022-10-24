@@ -1,0 +1,20 @@
+Estruture três códigos, os quais devem conter uma função de manipulação de string que obtenha resultado.
+
+Resposta:
+
+def manipulacao_string(op, nome):
+    if op == 1:
+        print(nome.upper())
+    elif op == 2:
+        print(nome.lower())
+    elif op == 3:
+        print(len(nome))
+    elif op == 4:
+        print("Maiúscula:", nome.upper())
+        print("Minúscula:", nome.lower())
+        print("Quantidade de caracteres:", len(nome))
+
+
+nome = input("Digite uma Frase: ")
+op = int(input("[1]Para Maiúscula\n[2]Para Minúscula\n[3]Para Contar Caracteres inseridos\n[4]Todas Opções\n"))
+manipulacao_string(op, nome)
