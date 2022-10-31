@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <script>
+        var n1 = window.prompt("Digite o número 1:")
+        var n2 = window.prompt("Digite o número 2:")
+        var op = window.prompt("Digite o tipo da operação:\n[*]Multiplicação\n[/]Divisão\n[+]Soma\n[-]Subtração")
+        var resultado
+        if (op == "*") {
+            resultado = n1 * n2
+            window.alert("Resultado:" + resultado)
+        } else if (op == "/") {
+            resultado = n1 / n2
+            sobra = n1 % n2
+            window.alert("Resultado:" + resultado)
+            if (sobra >= 1)
+                window.alert("Sobra da divisão:" + sobra)
+        } else if (op == "+") {
+            resultado = parseInt(n1) + parseInt(n2)
+            window.alert("Resultado:" + resultado)
+        } else if (op == "-") {
+            resultado = n1 - n2
+            window.alert("Resultado:" + resultado)
+        }
+    </script>
+</body>
+
+</html>
