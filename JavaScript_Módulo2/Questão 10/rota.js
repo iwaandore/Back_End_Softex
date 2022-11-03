@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express();
 
-app.get('/Servidor_PORRA_LOCA', (request, response) => {
+app.get('/AnimesOnline', (request, response) => {
     return response.send("Hello World");
 });
 
