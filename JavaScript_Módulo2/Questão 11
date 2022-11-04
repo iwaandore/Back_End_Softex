@@ -1,0 +1,30 @@
+Desenvolva um código e crie nele:
+
+- um objeto com, no mínimo, três propriedades;
+- um array de tamanho três no mínimo;
+- duas funções, a primeira lista as propriedades do objeto e a segunda, os elementos do array.
+
+Resposta :
+
+var Controle = {
+    cor: "amarelo",
+    marca: "LG",
+    qtd_pilhas: 2,
+}
+
+var a = [1, 5, 8]
+
+function listar_Objetos() {
+    for (var o in Controle) {
+        console.log(o + ":" + Controle[o]);
+    }
+}
+
+function listar_Array() {
+    for (var s of a) {
+        console.log(s)
+    }
+}
+
+listar_Objetos()
+listar_Array()
