@@ -1,0 +1,29 @@
+use atividade
+
+create table produtos (
+
+id int primary key auto_increment not null,
+nome varchar(30) not null,
+quantidade int not null,
+valor int not null,
+categoria_id int not null,
+foreign key (categoria_id) references produtos(id)
+
+)
+
+create table categoria(
+
+id int primary key not null auto_increment,
+nome varchar(30) not null
+
+)
+
+insert into produtos(nome, quantidade, valor, categoria_id) values('maçã', '2', 200, 1)
+insert into produtos(nome, quantidade, valor, categoria_id) values('Detergente', '5', 10, 2)
+
+
+select produtos.nome as produto, produtos.quantidade, produtos.valor, categoria.nome as tipo from produtos
+join categoria on categoria.id = produtos.categoria_id;
+
+insert into categoria(nome) values('Fruta');
+insert into categoria(nome) values('Limpeza');
