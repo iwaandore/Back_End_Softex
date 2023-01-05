@@ -1,0 +1,14 @@
+Você deve criar uma tabela para executar uma trigger que relacione algum comando, como: insert, select, delete ou update.
+
+create table desconto (
+id int primary key auto_increment not null,
+nome varchar(30) not null,
+valor decimal(10,2) not null,
+valor_desconto decimal(10,2) not null
+)
+
+create trigger tr_desconto before insert on desconto for each row set NEW.valor_desconto = (NEW.valor * 0.10);
+
+insert into desconto (nome, valor) values ("Teclado", 150.00)
+
+select*from desconto
