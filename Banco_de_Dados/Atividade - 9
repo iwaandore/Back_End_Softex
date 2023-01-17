@@ -1,0 +1,23 @@
+use procedure_storage
+
+create table biblioteca (
+
+	id int auto_increment not null primary key,
+    Livro varchar(30),
+    preço decimal(5,2)
+
+)
+
+create table livros_vendidos(
+	
+    id int auto_increment not null primary key,
+    Livro varchar(30),
+    Valor decimal(5,2)
+    
+)
+
+create procedure consultar_vendas()
+select concat('Livro vendidos: ', Livro , ' R$', Valor) as Vendas
+from livros_vendidos;
+
+call consultar_vendas();
