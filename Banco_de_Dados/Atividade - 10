@@ -1,0 +1,15 @@
+create table clientes(
+	id int auto_increment primary key not null,
+    Usuarios varchar(30) not null
+)
+
+CREATE FUNCTION total_clientes()
+RETURNS INT
+BEGIN
+    DECLARE total INT;
+    SET total = (SELECT COUNT(*) FROM clientes);
+    RETURN total;
+END;
+
+select total_clientes() as Registrados
+
