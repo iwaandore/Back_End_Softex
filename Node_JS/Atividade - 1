@@ -1,0 +1,16 @@
+//Com base nos vídeos 1 e 2, explique como a web funciona a partir do ponto de vista do protocolo cliente servidor. 
+Crie o começo de um projeto em node.js, usando o npm e informe os comandos utilizados.
+
+Basicamente o protocolo de cliente e servidor funciona da seguinte maneira, quando o usuário acessa um determinado site, ele faz uma requisição daquela rota,
+e o lado servidor envia aquela informação.//
+
+const express = require('express')  //Aqui estamos fazendo o requerimento da biblioteca express//
+const app = express()   //Aqui estamos declarando que a constante app está recebendo todas as características e funções que foram atribuídas na constante acima//
+
+app.get('/', (req, res) => {  //Foi utilizado um método do tipo Get, para pegar as seguintes informações...//
+    res.send('Olá mundo!')  //Aqui foi usado o método 'res' para enviar ao usuário, e em seguida foi utilizada a função '.send' para enviar a seguinte mensagem
+})
+
+app.listen(8080, () => {  //Foi utilizado um método Listen, no qual serve para redirecionar o código para um localhost//
+    console.log('Porta aberta 8080')
+})
