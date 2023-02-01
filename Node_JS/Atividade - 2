@@ -1,0 +1,44 @@
+//
+Sem usar bibliotecas, crie um projeto simples em Node.js que seja capaz de responder requisições HTTP.
+Explique como rodar e testar.//
+
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\n');
+});
+
+const port = 3000;
+server.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
+
+//Para executar e testar o código, você precisa:
+
+1.Salvar o código em um arquivo .js, por exemplo, "server.js".
+2.Abra o terminal e navegue até o diretório onde você salvou o arquivo.
+3.Execute o comando 'node server.js' para iniciar o servidor.
+4.Abra seu navegador e acesse "http://localhost:3000" para ver a saída "Hello World".//
+
+//Os seguintes comandos servem para enviar uma resposta HTTP ao cliente que fez a requisição:
+
+res.statusCode = 200; - Este comando define o código de status HTTP da resposta como 200. 
+O código de status HTTP é um número de três dígitos que indica o resultado da requisição para o cliente. 
+O valor 200 significa "OK", ou seja, a requisição foi bem-sucedida e a resposta é válida.
+
+res.setHeader('Content-Type', 'text/plain'); - Este comando define o tipo de conteúdo da resposta como "text/plain". 
+O cabeçalho "Content-Type" informa ao cliente qual é o tipo de dado que está sendo enviado na resposta. 
+Isso permite que o cliente saiba como interpretar o conteúdo da resposta.
+
+res.end('Hello World\n'); - Este comando envia a resposta ao cliente e termina a conexão. 
+A mensagem "Hello World\n" é o corpo da resposta e será exibido no navegador ou no cliente que fez a requisição. 
+O método "end" é usado para enviar a resposta e finalizar a conexão.
+
+Em resumo, os comandos acima são usados para enviar uma resposta HTTP simples ao cliente que fez a requisição, 
+indicando que a requisição foi bem-sucedida e incluindo o corpo da resposta.
+//
+
+
+
