@@ -1,0 +1,22 @@
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 3000
+
+//Rota Estática
+app.get('/rota1', (req, res) => {
+    res.send('Olá, bem vindo a rota 1, eu sou estática')
+})
+
+//Rota Placeholder
+app.get('/rota2:nome', (req, res) => {
+    res.send(`Olá, eu sou a rota 2 e você é ${req.params.nome}`)
+})
+
+//Rota Query
+app.get('/rota3', (req, res) => {
+    res.send(`Olá, eu sou a rota 3 e o valor inserido foi ${req.query.valor}`)
+})
+
+app.listen(port, () => {
+    console.log(`servidor iniciado na porta: ${port}`)
+})
