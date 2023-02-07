@@ -1,0 +1,23 @@
+const express = require('express')
+const app = express()
+const port = 8080
+
+app.get('/', (req, res) => {
+    res.send("Tipo get")
+})
+
+app.post('/', (req, res) => {
+    res.send("Tipo Post")
+})
+
+app.put('/', (req, res) => {
+    res.send("Tipo Put")
+})
+
+app.delete('/', (req, res) => {
+    res.send("Tipo delete")
+})
+
+app.listen(port, () => {
+    console.log(`Rodando na porta: ${port}`)
+})
