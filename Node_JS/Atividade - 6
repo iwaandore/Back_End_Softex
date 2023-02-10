@@ -1,0 +1,40 @@
+const express = require('express')
+const parser = require('body-parser')
+const cors = require('cors')
+
+const app = express()
+const port = process.env.PORT || 8080
+
+let db = []
+
+app.use(cors())
+
+app.use(parser.urlencoded({ extended: false }))
+app.use(parser.json())
+
+app.post('/add/client', (req, res) => {
+    let client = req.body
+    let position = db.length + 1
+    db.push(client)
+    client.position = position
+    res.status(200).send(client)
+})
+
+app.get('/ver_todos', (req,res)=>{
+    res.send(db)
+})
+
+app.delete('/remove/:id', (req, res) => {
+    let id = req.params.id
+    if (id > 0 && id <= db.length) {
+        db.splice(id - 1, 1)
+        res.status(201).send(`ID ${id} REMOVIDO`)
+    }
+    else {
+        res.status(404).send('ERROR ID NÃO ENCONTRADO')
+    }
+})
+
+app.listen(port, () => {
+    console.log(`Rodando na porta: ${port}`)
+})
