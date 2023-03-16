@@ -1,0 +1,31 @@
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.xml.ws.Endpoint;
+
+@WebService
+public class ExemploServico {
+    @WebMethod
+    public String saudacao(String nome) {
+        return "Olá " + nome + ", seja bem-vindo!";
+    }
+
+    @WebMethod
+    public int somar(int a, int b) {
+        return a + b;
+    }
+
+    @WebMethod
+    public int subtrair(int a, int b) {
+        return a - b;
+    }
+
+    @WebMethod
+    public int multiplicar(int a, int b) {
+        return a * b;
+    }
+
+    public static void main(String[] args) {
+        Endpoint.publish("http://localhost:8080/exemplo", new ExemploServico());
+        System.out.println("Serviço publicado na porta 8080");
+    }
+}
