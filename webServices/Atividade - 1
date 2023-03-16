@@ -1,1 +1,25 @@
-
+<!--Requisição-->
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:emp="http://www.empresa.com/">
+   <soap:Header>
+      <emp:AuthHeader>
+         <emp:Username>username</emp:Username>
+         <emp:Password>password</emp:Password>
+      </emp:AuthHeader>
+   </soap:Header>
+   <soap:Body>
+      <emp:GetClientInfo>
+         <emp:clientID>1</emp:clientID>
+      </emp:GetClientInfo>
+   </soap:Body>
+</soap:Envelope>
+<!--Resposta-->
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:emp="http://www.empresa.com/">
+   <soap:Header/>
+   <soap:Body>
+      <emp:ClientInfoResponse>
+         <emp:Nome>João Silva</emp:Nome>
+         <emp:Endereco>Rua ABC, 123</emp:Endereco>
+         <emp:Telefone>987654321</emp:Telefone>
+      </emp:ClientInfoResponse>
+   </soap:Body>
+</soap:Envelope>
