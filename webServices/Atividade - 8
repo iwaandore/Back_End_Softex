@@ -1,0 +1,24 @@
+
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+// Rota para criar um novo usuário
+app.post('/usuarios', (req, res) => {
+  const { nome, email } = req.body;
+  // Salvar os dados do usuário em um banco de dados ou arquivo, por exemplo
+  res.json({ mensagem: `Usuário ${nome} criado com sucesso!` });
+});
+
+// Rota para obter informações de um usuário específico
+app.get('/usuarios/:id', (req, res) => {
+  const { id } = req.params;
+  // Obter os dados do usuário a partir do ID, por exemplo
+  const usuario = { id, nome: 'Fulano', email: 'fulano@gmail.com' };
+  res.json(usuario);
+});
+
+app.listen(3000, () => {
+  console.log('Servidor rodando na porta 3000');
+});
