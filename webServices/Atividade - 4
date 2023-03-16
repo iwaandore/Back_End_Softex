@@ -1,0 +1,83 @@
+const express = require('express');
+const app = express();
+
+// Middleware para parsear o corpo das requisições como JSON
+app.use(express.json());
+
+// Simulando um banco de dados em memória
+const livros = [
+  {
+    id: 1,
+    nome: 'O Hobbit',
+    autor: 'J.R.R. Tolkien',
+    ISBN: '9788533613643',
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter e a Pedra Filosofal',
+    autor: 'J.K. Rowling',
+    ISBN: '9788532530430',
+  },
+];
+
+// Rota para listar todos os livros
+app.get('/livros', (req, res) => {
+  res.json(livros);
+});
+
+// Rota para buscar um livro pelo ID
+app.get('/livros/:id', (req, res) => {
+  const livro = livros.find((l) => l.id === parseInt(req.params.id));
+
+  if (!livro) {
+    return res.status(404).send('Livro não encontrado');
+  }
+
+  res.json(livro);
+});
+
+// Rota para criar um novo livro
+app.post('/livros', (req, res) => {
+  const livro = req.body;
+
+  // Gerando um novo ID para o livro
+  livro.id = livros.length + 1;
+
+  livros.push(livro);
+
+  res.json(livro);
+});
+
+// Rota para atualizar um livro existente
+app.put('/livros/:id', (req, res) => {
+  const livro = livros.find((l) => l.id === parseInt(req.params.id));
+
+  if (!livro) {
+    return res.status(404).send('Livro não encontrado');
+  }
+
+  // Atualizando os campos do livro com os valores do corpo da requisição
+  livro.nome = req.body.nome;
+  livro.autor = req.body.autor;
+  livro.ISBN = req.body.ISBN;
+
+  res.json(livro);
+});
+
+// Rota para deletar um livro existente
+app.delete('/livros/:id', (req, res) => {
+  const livroIndex = livros.findIndex((l) => l.id === parseInt(req.params.id));
+
+  if (livroIndex === -1) {
+    return res.status(404).send('Livro não encontrado');
+  }
+
+  livros.splice(livroIndex, 1);
+
+  res.sendStatus(204);
+});
+
+// Iniciando o servidor na porta 8080
+app.listen(8080, () => {
+  console.log('Servidor rodando na porta 8080');
+});
