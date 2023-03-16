@@ -1,0 +1,82 @@
+const express = require('express');
+const app = express();
+
+// Middleware para parsear o corpo das requisições como JSON
+app.use(express.json());
+
+// Simulando um banco de dados em memória
+const equipamentos = [
+  {
+    id: 1,
+    nome: 'Notebook',
+    marca: 'Dell',
+    modelo: 'Latitude 5480',
+  },
+  {
+    id: 2,
+    nome: 'Mouse',
+    marca: 'Logitech',
+    modelo: 'M185',
+  },
+];
+
+// Rota para listar todos os equipamentos
+app.get('/equipamentos', (req, res) => {
+  res.json(equipamentos);
+});
+
+// Rota para buscar um equipamento pelo ID
+app.get('/equipamentos/:id', (req, res) => {
+  const equipamento = equipamentos.find((e) => e.id === parseInt(req.params.id));
+
+  if (!equipamento) {
+    return res.status(404).send('Equipamento não encontrado');
+  }
+
+  res.json(equipamento);
+});
+
+// Rota para criar um novo equipamento
+app.post('/equipamentos', (req, res) => {
+  const equipamento = req.body;
+
+  // Gerando um novo ID para o equipamento
+  equipamento.id = equipamentos.length + 1;
+
+  equipamentos.push(equipamento);
+
+  res.status(201).json(equipamento);
+});
+
+// Rota para atualizar um equipamento existente
+app.put('/equipamentos/:id', (req, res) => {
+  const equipamento = equipamentos.find((e) => e.id === parseInt(req.params.id));
+
+  if (!equipamento) {
+    return res.status(404).send('Equipamento não encontrado');
+}
+// Atualizando as informações do equipamento com as informações da requisição
+equipamento.nome = req.body.nome;
+equipamento.marca = req.body.marca;
+equipamento.modelo = req.body.modelo;
+
+res.json(equipamento);
+});
+
+// Rota para deletar um equipamento existente
+app.delete('/equipamentos/:id', (req, res) => {
+const index = equipamentos.findIndex((e) => e.id === parseInt(req.params.id));
+
+if (index === -1) {
+return res.status(404).send('Equipamento não encontrado');
+}
+
+equipamentos.splice(index, 1);
+
+res.status(204).send();
+});
+
+// Iniciando o servidor na porta 3000
+app.listen(3000, () => {
+console.log('Servidor iniciado na porta 3000');
+});
